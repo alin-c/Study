@@ -9,7 +9,7 @@
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
-			"program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/learn.dll",
+			"program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/Events.dll",
 			"args": [],
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",

@@ -1,12 +1,13 @@
 using System;
 
-namespace learn {
+namespace Events {
 	// 1. declare a delegate type; system events use EventHandler
 	delegate void Handler(int number);
 
 	// 2. the publisher: publishes an event, so that other classes can be notified when the event occurs
 	class Incrementer {
-		const int limit = 500;
+		const int limit = 50;
+		const int step = 7;
 
 		// 3. creates and publishes an event
 		public event Handler CountedABlock;
@@ -14,7 +15,7 @@ namespace learn {
 		// 4. method during whose execution the event will be raised
 		public void DoCount() {
 			for (int i = 0; i < limit; i++) {
-				if (i % 21 == 0 && CountedABlock != null) {
+				if (i % step == 0 && CountedABlock != null) {
 					CountedABlock(i);
 				} else {
 					Console.WriteLine($"{i,3}");
@@ -23,15 +24,15 @@ namespace learn {
 		}
 	}
 
-	// subscriber
+	// the subscriber
 	class Blocks {
 		public int BlocksCount { get; private set; }
 
 		public Blocks(Incrementer incrementer) {
 			BlocksCount = 0;
 			// 5. registers to be notified when the event occurs
-			// multiple methods can be registered
-			// each method must match the delegate signature
+			// - multiple methods can be registered
+			// - each method must match the delegate signature
 			incrementer.CountedABlock += ShowMessage;
 			incrementer.CountedABlock += ShowAnotherMessage;
 		}
