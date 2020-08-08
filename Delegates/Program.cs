@@ -22,7 +22,7 @@ namespace Delegates {
 			Random random = new Random();
 			int randomValue = random.Next(100);
 
-			// 4. instantiate the variable
+			// 4. initialize the delegate variable
 			printDelegate = randomValue < 50 ? new PrintDelegate(PrintLow) : new PrintDelegate(PrintHigh);
 
 			// 5. execute (invoke) the delagate
