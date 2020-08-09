@@ -47,6 +47,7 @@ namespace Interfaces {
 			info2.WriteLog("third try");
 
 			// call the explicit implementation
+			// this is allowed only through a reference for the interface
 			IInfo2 info21 = program;
 			Console.WriteLine(info21.DisplayMessage());
 		}
