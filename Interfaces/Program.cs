@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Interfaces {
 	// 1. declare the interface
