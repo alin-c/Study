@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Interfaces {
 	// 1. declare the interface
@@ -23,7 +23,7 @@ namespace Interfaces {
 			Console.WriteLine($"WriteLog() is called; arg is: {text}");
 		}
 
-		// explicit interfce member implementation
+		// explicit interface member implementation
 		string IInfo2.DisplayMessage() {
 			Console.WriteLine("IInfo2.DisplayMessage() is called");
 			return "Done too well";
